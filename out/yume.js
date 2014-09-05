@@ -3,7 +3,7 @@
 // @namespace   org.jixun.tieba.ass
 // @description 重写贴吧助手，原来的代码太乱懒得修了。
 // @include     http://tieba.baidu.com/*
-// @version     2.2.26
+// @version     2.2.27
 
 
 /// jQuery 留一份自己用
@@ -18,7 +18,7 @@
 // @require https://greasyfork.org/scripts/3588/code/Interval_Looper.js
 
 /// 兼容 GM 1.x, 2.x
-// @require     https://greasyfork.org/scripts/2599/code/gm2_port.js
+// @require     https://greasyfork.org/scripts/2599/code/gm2_port_v103.js
 
 
 // @grant       GM_xmlhttpRequest
@@ -45,6 +45,17 @@ jQuery(function ($) {
 			}
 
 			w.PageData.games = unsafeObject([]);
+
+			unsafeExec (function () {
+				// 改进自 congxz6688 的 tieba_quote [#147]
+				// 节取自 寂寞的原子 的  悬浮窗脚本 [#116]
+				_.Module.use("common/widget/RichPoster", {},
+					function (t) {
+						t.init();
+						t.unbindScrollEvent();
+					});
+			});
+
 			_main ($, w.PageData);
 		}
 	}, 500);

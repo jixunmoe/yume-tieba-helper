@@ -18,7 +18,7 @@
 // @require https://greasyfork.org/scripts/3588/code/Interval_Looper.js
 
 /// 兼容 GM 1.x, 2.x
-// @require     https://greasyfork.org/scripts/2599/code/gm2_port.js
+// @require     https://greasyfork.org/scripts/2599/code/gm2_port_v103.js
 
 
 // @grant       GM_xmlhttpRequest

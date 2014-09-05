@@ -14,6 +14,17 @@ jQuery(function ($) {
 			}
 
 			w.PageData.games = unsafeObject([]);
+
+			unsafeExec (function () {
+				// 改进自 congxz6688 的 tieba_quote [#147]
+				// 节取自 寂寞的原子 的  悬浮窗脚本 [#116]
+				_.Module.use("common/widget/RichPoster", {},
+					function (t) {
+						t.init();
+						t.unbindScrollEvent();
+					});
+			});
+
 			_main ($, w.PageData);
 		}
 	}, 500);
