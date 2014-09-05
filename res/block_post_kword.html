@@ -1,0 +1,11 @@
+<li>
+	<select class="jx_word_type">
+		<option value="0" {{#tp_regex}}selected{{/tp_regex}}>正则</option>
+		<option value="1" {{#tp_plain}}selected{{/tp_plain}}>文本</option>
+	</select>
+
+	<span{{#tp_regex}} class="regex"{{/tp_regex}}><input class="jx_word" value="{{word}}" /></span><!--
+ --><input class="jx_modifier{{^tp_regex}} hide{{/tp_regex}}" value="{{modi}}" />
+
+	[ <a class="ptr jx-rm-key" >删除</a> ]
+</li>

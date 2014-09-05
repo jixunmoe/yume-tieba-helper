@@ -1,0 +1,18 @@
+<div style="height: 100%; overflow-y: auto">
+	<h2>启用的模组</h2>
+	<div id="jx_conf_modules">
+		{{#modules}}
+		<label title="{{desc}}">
+			<input type="checkbox" data-module="{{id}}" {{#enable}}checked{{/enable}}/> {{name}}
+		</label>{{#config}}[ <a data-config="{{id}}" class="jx_conf ptr">配置</a> ]{{/config}}
+		<br />
+		{{/modules}}
+	</div>
+	<br />
+
+	<!-- 按钮区 -->
+	<div class="text-center">
+		<a class="ui_btn ui_btn_m" id="jx_save"><span><em>储存</em></span></a> &nbsp;
+		<a class="ui_btn ui_btn_m" id="jx_close"><span><em>放弃</em></span></a>
+	</div>
+</div>

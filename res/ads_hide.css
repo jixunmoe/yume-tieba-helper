@@ -1,0 +1,12 @@
+ {
+display:none !important;
+}
+
+#com_userbar_message {
+	right: 30px !important;
+	top: 28px !important;
+}
+
+#com_userbar_message > .j_ui_triangle {
+	left: 65px !important;
+}

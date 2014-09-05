@@ -1,0 +1,22 @@
+<div class="jx_autoflow">
+	<h2>3 天循环隐藏的列表</h2>
+
+	<p class="text-center">请注意: 封禁时间不会自动刷新, 请关闭后重新开启该对话框。</p>
+
+	<ol>
+	{{#author}}
+		<% $hide_loops_author.html %>
+	{{/author}}
+	<li id="jx_last_line_of_3day_block">
+		<input id="jx_new_id" placeholder="请输入新的需要自动封禁的 id" style="width: 20em;" />
+		<br /><a class="ui_btn ui_btn_m" id="jx_add"><span><em>添加</em></span></a>
+	</li>
+	</ol>
+
+	<p class="hide" id="jx_hide_info"></p>
+
+	<div class="text-center">
+	<a class="ui_btn ui_btn_m" id="jx_all"><span><em>全部封禁</em></span></a> &nbsp;
+	<a class="ui_btn ui_btn_m" id="jx_close"><span><em>关闭</em></span></a>
+	</div>
+</div>

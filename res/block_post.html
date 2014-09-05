@@ -1,0 +1,37 @@
+<div class="jx_autoflow">
+	<h3>当匹配到时的操作</h3>
+	<p>
+	<select id="jx_post_match">
+		<option value="0" {{#tp_bar}}selected{{/tp_bar}}>红条</option>
+		<option value="1" {{#tp_opa}}selected{{/tp_opa}}>透明</option>
+		<option value="2" {{#tp_hide}}selected{{/tp_hide}}>隐藏</option>
+	</select>
+
+	<label title="0 表示完全透明 (占位难看哦); 0~100"{{^tp_opa}} class="hide"{{/tp_opa}}>透明度
+		<input type="number" id="jx_post_opa" class="text-center" value="{{opacity}}" style="width: 5em" />%
+	</label>
+	</p>
+	<br />
+
+	<h3>内容屏蔽规则</h3>
+	<ul id="jx_post_kword">
+	{{#kword}}
+		<% $block_post_kword.html %>
+	{{/kword}}
+	</ul>
+	<p><a class="ui_btn ui_btn_m" data-btn="add"><span><em>添加</em></span></a></p>
+	<br />
+
+	<h3>用户屏蔽列表</h3>
+	<p>用户列表，一行一个</p>
+	<!-- Hackish solution -->
+	<div style="padding-right: 10px;">
+		<textarea id="jx_post_user" row=5 style="width: 100%; padding: .2em">{{user}}</textarea>
+	</div>
+	<br />
+
+	<p class="text-center">
+		<a class="ui_btn ui_btn_m" data-btn="save"><span><em>储存</em></span></a> &nbsp; 
+		<a class="ui_btn ui_btn_m" data-btn="close"><span><em>放弃</em></span></a>
+	</p>
+</div>
