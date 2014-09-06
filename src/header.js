@@ -7,6 +7,7 @@
 // @description 重写贴吧助手，原来的代码太乱懒得修了。
 // @include     http://tieba.baidu.com/*
 // @version     2.2.<% #build.js %>
+// @license     MIT License; https://raw.githubusercontent.com/JixunMoe/yume-tieba-helper/master/LICENSE
 
 
 /// jQuery 留一份自己用
