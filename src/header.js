@@ -1,5 +1,8 @@
 // ==UserScript==
 // @name        梦姬贴吧助手
+// @name:en     Yume Tieba Helper
+// @name:zh-CN  梦姬贴吧助手
+// @name:zh-TW  夢姬貼吧小幫手
 // @namespace   org.jixun.tieba.ass
 // @description 重写贴吧助手，原来的代码太乱懒得修了。
 // @include     http://tieba.baidu.com/*
@@ -20,6 +23,7 @@
 /// 兼容 GM 1.x, 2.x
 // @require     https://greasyfork.org/scripts/2599/code/gm2_port_v103.js
 
+// @supportURL https://github.com/JixunMoe/yume-tieba-helper/issues/new
 
 // @grant       GM_xmlhttpRequest
 // @grant       GM_registerMenuCommand

@@ -32,4 +32,4 @@ var parseScript = function (s) {
 	});
 };
 
-fs.writeFile (outDir + 'yume.js', parseScript (fs.readFileSync(srcDir + 'main.js')));
+fs.writeFile (outDir + 'yume-tieba-helper.user.js', parseScript (fs.readFileSync(srcDir + 'main.js')));
