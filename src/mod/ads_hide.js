@@ -33,7 +33,8 @@
 			'.doupiao_offline, .fMember_cnt',
 
 			// 右上角
-			'.u_tshow, .u_tbmall, .u_app, .u_wallet, .u_xiu8, .u_mytbmall, .u_joinvip',
+			'.u_tshow, .u_tbmall, .u_app, .u_wallet, .u_xiu8',
+			'.u_mytbmall, .u_joinvip, .u_baiduPrivilege',
 
 			// 右下角
 			'#pop_frame',
@@ -41,7 +42,11 @@
 			// 猜拳贴发表
 			'.add_guessing_btn',
 			
+			// 帖子推荐
 			'.thread_recommend',
+			
+			// 右下角广告
+			'#__bdyx_tips, #__bdyx_tips_icon',
 
 			'#tshow_out_date_warn, #selectsearch-icon'
 		].join(', ');

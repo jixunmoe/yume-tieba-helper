@@ -6,7 +6,7 @@
 // @namespace   org.jixun.tieba.ass
 // @description 重写贴吧助手，原来的代码太乱懒得修了。
 // @include     http://tieba.baidu.com/*
-// @version     2.2.31
+// @version     2.2.32
 // @license     MIT License; https://raw.githubusercontent.com/JixunMoe/yume-tieba-helper/master/LICENSE
 
 
@@ -211,7 +211,8 @@ _main = function ($, wPageData) {
 			'.doupiao_offline, .fMember_cnt',
 
 			// 右上角
-			'.u_tshow, .u_tbmall, .u_app, .u_wallet, .u_xiu8, .u_mytbmall, .u_joinvip',
+			'.u_tshow, .u_tbmall, .u_app, .u_wallet, .u_xiu8',
+			'.u_mytbmall, .u_joinvip, .u_baiduPrivilege',
 
 			// 右下角
 			'#pop_frame',
@@ -219,7 +220,11 @@ _main = function ($, wPageData) {
 			// 猜拳贴发表
 			'.add_guessing_btn',
 			
+			// 帖子推荐
 			'.thread_recommend',
+			
+			// 右下角广告
+			'#__bdyx_tips, #__bdyx_tips_icon',
 
 			'#tshow_out_date_warn, #selectsearch-icon'
 		].join(', ');
