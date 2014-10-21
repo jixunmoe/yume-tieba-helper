@@ -39,14 +39,17 @@
 			// 右下角
 			'#pop_frame',
 
-			// 猜拳贴发表
-			'.add_guessing_btn',
+			// 猜拳
+			'.add_guessing_btn, .guessing_watermark',
 			
 			// 帖子推荐
 			'.thread_recommend',
 			
 			// 右下角广告
 			'#__bdyx_tips, #__bdyx_tips_icon',
+
+			// 烟花
+			'.firework_sender_wrap, .global_notice_wrap',
 
 			'#tshow_out_date_warn, #selectsearch-icon'
 		].join(', ');

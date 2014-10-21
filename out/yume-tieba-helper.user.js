@@ -6,7 +6,7 @@
 // @namespace   org.jixun.tieba.ass
 // @description 重写贴吧助手，原来的代码太乱懒得修了。
 // @include     http://tieba.baidu.com/*
-// @version     2.2.32
+// @version     2.2.33
 // @license     MIT License; https://raw.githubusercontent.com/JixunMoe/yume-tieba-helper/master/LICENSE
 
 
@@ -217,14 +217,17 @@ _main = function ($, wPageData) {
 			// 右下角
 			'#pop_frame',
 
-			// 猜拳贴发表
-			'.add_guessing_btn',
+			// 猜拳
+			'.add_guessing_btn, .guessing_watermark',
 			
 			// 帖子推荐
 			'.thread_recommend',
 			
 			// 右下角广告
 			'#__bdyx_tips, #__bdyx_tips_icon',
+
+			// 烟花
+			'.firework_sender_wrap, .global_notice_wrap',
 
 			'#tshow_out_date_warn, #selectsearch-icon'
 		].join(', ');
@@ -256,7 +259,8 @@ display:none !important;
 				|| !$(this.nextElementSibling).is(':visible');
 		}).remove();
 	}
-},
+}
+,
 "audio_download": {
 	name: '贴吧语音下载',
 	desc: '下载贴吧语音~ 啦啦啦~',
