@@ -51,6 +51,8 @@
 			// 烟花
 			'.firework_sender_wrap, .global_notice_wrap',
 
+			'.tbui_fbar_share, .tbui_fbar_tsukkomi, .tbui_fbar_props, .tbui_fbar_square',
+
 			'#tshow_out_date_warn, #selectsearch-icon'
 		].join(', ');
 

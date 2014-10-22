@@ -3,7 +3,7 @@
 var w = unsafeWindow, _main;
 jQuery(function ($) {
 	var iv = setInterval(function () {
-		if (w.jQuery && w.PageData && w.PageData.tbs_loaded) {
+		if (w.jQuery && w.PageData && w.PageData.tbs) {
 			clearInterval(iv);
 			console.log('PageData loaded.');
 
