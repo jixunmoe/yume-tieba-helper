@@ -6,7 +6,7 @@
 // @namespace   org.jixun.tieba.ass
 // @description 重写贴吧助手，原来的代码太乱懒得修了。
 // @include     http://tieba.baidu.com/*
-// @version     2.2.33
+// @version     2.2.42
 // @license     MIT License; https://raw.githubusercontent.com/JixunMoe/yume-tieba-helper/master/LICENSE
 
 
@@ -39,7 +39,7 @@
 var w = unsafeWindow, _main;
 jQuery(function ($) {
 	var iv = setInterval(function () {
-		if (w.jQuery && w.PageData && w.PageData.tbs_loaded) {
+		if (w.jQuery && w.PageData && w.PageData.tbs) {
 			clearInterval(iv);
 			console.log('PageData loaded.');
 
@@ -215,7 +215,7 @@ _main = function ($, wPageData) {
 			'.u_mytbmall, .u_joinvip, .u_baiduPrivilege',
 
 			// 右下角
-			'#pop_frame',
+			'#pop_frame, #__bdyx_tips, #__bdyx_tips_icon',
 
 			// 猜拳
 			'.add_guessing_btn, .guessing_watermark',
@@ -228,6 +228,8 @@ _main = function ($, wPageData) {
 
 			// 烟花
 			'.firework_sender_wrap, .global_notice_wrap',
+
+			'.tbui_fbar_share, .tbui_fbar_tsukkomi, .tbui_fbar_props, .tbui_fbar_square',
 
 			'#tshow_out_date_warn, #selectsearch-icon'
 		].join(', ');
