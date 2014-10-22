@@ -37,7 +37,7 @@
 			'.u_mytbmall, .u_joinvip, .u_baiduPrivilege',
 
 			// 右下角
-			'#pop_frame',
+			'#pop_frame, #__bdyx_tips, #__bdyx_tips_icon',
 
 			// 猜拳
 			'.add_guessing_btn, .guessing_watermark',
