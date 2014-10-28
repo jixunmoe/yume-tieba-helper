@@ -4,7 +4,9 @@
 // @name:zh-CN  梦姬贴吧助手
 // @name:zh-TW  夢姬貼吧小幫手
 // @namespace   org.jixun.tieba.ass
-// @description 重写贴吧助手，原来的代码太乱懒得修了。
+// @description:en    Just Another Tieba Helper
+// @description:zh-tw 又一个贴吧助手
+// @description       又一個貼吧助手
 // @include     http://tieba.baidu.com/*
 // @version     2.2.<% #build.js %>
 // @license     MIT License; https://raw.githubusercontent.com/JixunMoe/yume-tieba-helper/master/LICENSE
