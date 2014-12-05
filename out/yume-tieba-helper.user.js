@@ -9,7 +9,7 @@
 // @description:zh-cn 又一个贴吧助手
 // @description       又一个贴吧助手
 // @include     http://tieba.baidu.com/*
-// @version     2.2.45
+// @version     2.2.51
 // @license     MIT License; https://raw.githubusercontent.com/JixunMoe/yume-tieba-helper/master/LICENSE
 
 
@@ -187,6 +187,14 @@ _main = function ($, wPageData) {
 		var $ads = [
 			// 贴吧推广
 			'.spreadad, .game_frs_step1, .BAIDU_CLB_AD, .dasense, .u9_head',
+			
+			'#thread_list>[data-daid], .p_postlist>[data-daid]',
+			
+			// 直播
+			'#game_live_list',
+
+			// 10 年
+			'#j_ten_years',
 
 			// 1l 下方的广告
 			'#sofa_post, .banner_post',
@@ -227,7 +235,10 @@ _main = function ($, wPageData) {
 			'.thread_recommend',
 			
 			// 右下角广告
-			'#__bdyx_tips, #__bdyx_tips_icon',
+			'#__bdyx_tips, #__bdyx_tips_icon, .baidu-tuisong-wrap, .baidutuisong',
+
+			// 打赏、分享
+			'.reward_btn, .share_btn_wrapper',
 
 			// 烟花
 			'.firework_sender_wrap, .global_notice_wrap',
@@ -257,12 +268,17 @@ display:none !important;
 		// 只保留 [看帖、图片、精品、视频] 四个选项
 		$('.j_tbnav_tab').filter (function (i) { return i > 3; }).remove ();
 
-		$('.split_text').next('.split_text').remove();
-		$('.split').filter(function () {
-			return this.nextElementSibling === null
-				|| this.nextElementSibling.className == this.className
-				|| !$(this.nextElementSibling).is(':visible');
-		}).remove();
+		// 执行三次, 确保分隔符会消失
+		for (var i = 3; i--; ) {
+			setTimeout (function () {
+				$('.split_text').next('.split_text').remove();
+				$('.split').filter(function () {
+					return this.nextElementSibling === null
+						|| this.nextElementSibling.className == this.className
+						|| !$(this.nextElementSibling).is(':visible');
+				}).remove();
+			}, 3000 * i);
+		}
 	}
 }
 ,
@@ -1225,7 +1241,6 @@ a.jx, .ptr	{ cursor: pointer		}
 		$conf.set ('confVer', [1]);
 
 		var $mods = $conf.get ('modules', {});
-		console.log ($mods);
 		
 		$.each (modules, function (mId, fMod) {
 			if ($mods[mId] == __mod_disable
@@ -1242,7 +1257,6 @@ a.jx, .ptr	{ cursor: pointer		}
 			}
 
 		});
-		console.log (lMods);
 	}, 'Init. modules');
 
 	var _event = function (floorType, otherInfo, _proc) {
@@ -1259,7 +1273,7 @@ a.jx, .ptr	{ cursor: pointer		}
 		var $tailer = $(tailer),
 			_main   = $tailer.parents('.l_post');
 
-		console.log ($tailer, _main);
+		// console.log ($tailer, _main);
 
 		_event (__type_floor, {
 			_main:    _main,

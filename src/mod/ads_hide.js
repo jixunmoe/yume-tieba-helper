@@ -6,6 +6,14 @@
 		var $ads = [
 			// 贴吧推广
 			'.spreadad, .game_frs_step1, .BAIDU_CLB_AD, .dasense, .u9_head',
+			
+			'#thread_list>[data-daid], .p_postlist>[data-daid]',
+			
+			// 直播
+			'#game_live_list',
+
+			// 10 年
+			'#j_ten_years',
 
 			// 1l 下方的广告
 			'#sofa_post, .banner_post',
@@ -46,7 +54,10 @@
 			'.thread_recommend',
 			
 			// 右下角广告
-			'#__bdyx_tips, #__bdyx_tips_icon',
+			'#__bdyx_tips, #__bdyx_tips_icon, .baidu-tuisong-wrap, .baidutuisong',
+
+			// 打赏、分享
+			'.reward_btn, .share_btn_wrapper',
 
 			// 烟花
 			'.firework_sender_wrap, .global_notice_wrap',
@@ -62,11 +73,16 @@
 		// 只保留 [看帖、图片、精品、视频] 四个选项
 		$('.j_tbnav_tab').filter (function (i) { return i > 3; }).remove ();
 
-		$('.split_text').next('.split_text').remove();
-		$('.split').filter(function () {
-			return this.nextElementSibling === null
-				|| this.nextElementSibling.className == this.className
-				|| !$(this.nextElementSibling).is(':visible');
-		}).remove();
+		// 执行三次, 确保分隔符会消失
+		for (var i = 3; i--; ) {
+			setTimeout (function () {
+				$('.split_text').next('.split_text').remove();
+				$('.split').filter(function () {
+					return this.nextElementSibling === null
+						|| this.nextElementSibling.className == this.className
+						|| !$(this.nextElementSibling).is(':visible');
+				}).remove();
+			}, 3000 * i);
+		}
 	}
 }

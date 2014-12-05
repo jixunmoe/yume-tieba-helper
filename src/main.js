@@ -263,7 +263,6 @@ _main = function ($, wPageData) {
 		$conf.set ('confVer', [1]);
 
 		var $mods = $conf.get ('modules', {});
-		console.log ($mods);
 		
 		$.each (modules, function (mId, fMod) {
 			if ($mods[mId] == __mod_disable
@@ -280,7 +279,6 @@ _main = function ($, wPageData) {
 			}
 
 		});
-		console.log (lMods);
 	}, 'Init. modules');
 
 	var _event = function (floorType, otherInfo, _proc) {
@@ -297,7 +295,7 @@ _main = function ($, wPageData) {
 		var $tailer = $(tailer),
 			_main   = $tailer.parents('.l_post');
 
-		console.log ($tailer, _main);
+		// console.log ($tailer, _main);
 
 		_event (__type_floor, {
 			_main:    _main,
