@@ -7,7 +7,7 @@
 			// 贴吧推广
 			'.spreadad, .game_frs_step1, .BAIDU_CLB_AD, .dasense, .u9_head',
 			
-			'#thread_list>[data-daid], .p_postlist>[data-daid]',
+			'[data-daid]',
 			
 			// 直播
 			'#game_live_list',
@@ -42,7 +42,7 @@
 
 			// 右上角
 			'.u_tshow, .u_tbmall, .u_app, .u_wallet, .u_xiu8',
-			'.u_mytbmall, .u_joinvip, .u_baiduPrivilege',
+			'.u_mytbmall, .u_joinvip, .u_baiduPrivilege, .u_appcenterEntrance',
 
 			// 右下角
 			'#pop_frame, #__bdyx_tips, #__bdyx_tips_icon',
