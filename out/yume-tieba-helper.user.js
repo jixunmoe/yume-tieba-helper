@@ -9,7 +9,7 @@
 // @description:zh-cn 又一个贴吧助手
 // @description       又一个贴吧助手
 // @include     http://tieba.baidu.com/*
-// @version     2.2.52
+// @version     2.2.53
 // @license     MIT License; https://raw.githubusercontent.com/JixunMoe/yume-tieba-helper/master/LICENSE
 
 
@@ -201,6 +201,9 @@ _main = function ($, wPageData) {
 
 			// 贴吧顶部广告
 			'#pb_adbanner',
+			
+			// 左右侧
+			'.j_couplet',
 
 			// 右侧
 			'.right_section > *:not(#balv_mod)',

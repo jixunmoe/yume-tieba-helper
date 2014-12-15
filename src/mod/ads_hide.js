@@ -20,6 +20,9 @@
 
 			// 贴吧顶部广告
 			'#pb_adbanner',
+			
+			// 左右侧
+			'.j_couplet',
 
 			// 右侧
 			'.right_section > *:not(#balv_mod)',
