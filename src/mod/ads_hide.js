@@ -7,7 +7,14 @@
 			// 贴吧推广
 			'.spreadad, .game_frs_step1, .BAIDU_CLB_AD, .dasense, .u9_head',
 			
+			// 到处插入的广告
 			'[data-daid]',
+
+			// 帖子列表顶部
+			'#content_leftList>:not(#thread_list):not(.pager)',
+
+			// 右下角广告
+			'#game_pop_window',
 			
 			// 直播
 			'#game_live_list',
