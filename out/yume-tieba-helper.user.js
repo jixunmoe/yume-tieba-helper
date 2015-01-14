@@ -9,7 +9,7 @@
 // @description:zh-cn 又一个贴吧助手
 // @description       又一个贴吧助手
 // @include     http://tieba.baidu.com/*
-// @version     2.2.56
+// @version     2.2.57
 // @license     MIT License; https://raw.githubusercontent.com/JixunMoe/yume-tieba-helper/master/LICENSE
 
 
@@ -192,7 +192,7 @@ _main = function ($, wPageData) {
 			'[data-daid]',
 
 			// 帖子列表顶部
-			'#content_leftList>:not(#thread_list):not(.pager)',
+			'#content_leftList>:not(#thread_list):not(.thread_list_bottom)',
 
 			// 右下角广告
 			'#game_pop_window',
