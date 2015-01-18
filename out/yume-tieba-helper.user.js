@@ -9,7 +9,7 @@
 // @description:zh-cn 又一个贴吧助手
 // @description       又一个贴吧助手
 // @include     http://tieba.baidu.com/*
-// @version     2.2.58
+// @version     2.2.61
 // @license     MIT License; https://raw.githubusercontent.com/JixunMoe/yume-tieba-helper/master/LICENSE
 
 
@@ -990,12 +990,14 @@ display:none !important;
 			} else if (/^https?:\/\//.test($url)) {
 				$ele.attr('href', $url);
 			} else {
+				// HEAD 请求会变成 error ..?
 				GM_xmlhttpRequest ({
-					method: 'HEAD',
-					url: $url,
+					method: 'GET',
+					url: ele.href,
 					headers: {
 						// 去你的百度
-						Referer: 'http://tieba.baidu.com/p/123456789'
+						Referer: 'http://tieba.baidu.com/p/123456789',
+						Range: 'bytes=0-0'
 					},
 					onload: function (response) {
 						if (response.finalUrl.indexOf('http') === 0) {
