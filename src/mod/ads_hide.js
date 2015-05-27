@@ -10,9 +10,6 @@
 			// 到处插入的广告
 			'[data-daid]',
 
-			// 帖子列表顶部
-			'#threadListGroupCnt',
-
 			// 右下角广告
 			'#game_pop_window',
 			

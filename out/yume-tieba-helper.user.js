@@ -9,7 +9,7 @@
 // @description:zh-cn 又一个贴吧助手
 // @description       又一个贴吧助手
 // @include     http://tieba.baidu.com/*
-// @version     2.2.62
+// @version     2.2.64
 // @license     MIT License; https://raw.githubusercontent.com/JixunMoe/yume-tieba-helper/master/LICENSE
 
 
@@ -191,9 +191,6 @@ _main = function ($, wPageData) {
 			// 到处插入的广告
 			'[data-daid]',
 
-			// 帖子列表顶部
-			'#threadListGroupCnt',
-
 			// 右下角广告
 			'#game_pop_window',
 			
@@ -292,6 +289,20 @@ display:none !important;
 	}
 }
 ,
+"ads_thread_list": {
+	name: '屏蔽直播贴等乱七八糟内容 (实验性)',
+	desc: '如题。',
+	flag: ~0,
+	_init: function () {
+		var $ads = [
+			// 帖子列表顶部, 如直播贴
+			'#threadListGroupCnt'
+		].join(', ');
+
+		$($ads).remove();
+		$('<style>').text($ads + '{display: none !important}').appendTo('head');
+	}
+},
 "audio_download": {
 	name: '贴吧语音下载',
 	desc: '下载贴吧语音~ 啦啦啦~',
