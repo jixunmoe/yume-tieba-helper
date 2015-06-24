@@ -30,7 +30,7 @@
 
 			// 右侧
 			'.right_section > *:not(#balv_mod)',
-			'#aside > *:not(#balv_mod):not(#forumInfoPanel):not(#zyq):not(#adminModePanel)',
+			'#aside > *:not(#balv_mod):not(#forumInfoPanel):not(#zyq_bright):not(#adminModePanel)',
 
 			// 客户端发贴 x 倍经验
 			'.tb_poster_placeholder',
