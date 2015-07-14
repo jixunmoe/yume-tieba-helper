@@ -29,8 +29,8 @@
 			'.j_couplet',
 
 			// 右侧
-			'.right_section > *:not(#balv_mod)',
-			'#aside > *:not(#balv_mod):not(#forumInfoPanel):not(#zyq_bright):not(#adminModePanel)',
+			'#encourage_entry',
+			'.platform_aside_tieba_partner',
 
 			// 客户端发贴 x 倍经验
 			'.tb_poster_placeholder',
