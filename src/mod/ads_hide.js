@@ -25,6 +25,9 @@
 			// 贴吧顶部广告
 			'#pb_adbanner',
 			
+			// 图片页面
+			'.af_head_gamelink',
+			
 			// 左右侧
 			'.j_couplet',
 
