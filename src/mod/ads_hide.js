@@ -6,6 +6,10 @@
 		var $ads = [
 			// 贴吧推广
 			'.spreadad, .game_frs_step1, .BAIDU_CLB_AD, .dasense, .u9_head',
+			'.j_click_stats, .p_postlist>div:not(.l_post)',
+			'[id="pagelet_frs-header/pagelet/head_content_middle"]',
+			'[id="pagelet_encourage-appforum/pagelet/my_app"]',
+			'.life_helper',
 			
 			// 到处插入的广告
 			'[data-daid]',
@@ -74,7 +78,10 @@
 
 			'.tbui_fbar_share, .tbui_fbar_tsukkomi, .tbui_fbar_props, .tbui_fbar_square, .tbui_fbar_home',
 
-			'#tshow_out_date_warn, #selectsearch-icon'
+			'#tshow_out_date_warn, #selectsearch-icon',
+			
+			// 贴吧推荐
+			'#forum_recommend'
 		].join(', ');
 
 		$($ads).remove();
@@ -94,5 +101,25 @@
 				}).remove();
 			}, 3000 * i);
 		}
+		
+		this.removePromoteThread();
+	},
+	
+	_proc: function (floorType, args) {
+		if (floorType == __type_forum) {
+			if (args.thread.find('.threadlist_rep_num').text() == '推广')
+				args.thread.remove();
+		}
+	},
+	
+	removePromoteThread: function () {
+		// 清理帖子列表的推广
+		var it = document.evaluate('//*[@id="thread_list"]/li/div/div/div[text()="推广"]', document.body);
+		var thread, threads = [];
+		
+		while (thread = it.iterateNext())
+			threads.push(thread);
+		
+		$(threads).parents('li').remove();
 	}
 }

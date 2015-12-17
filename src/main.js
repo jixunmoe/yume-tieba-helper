@@ -92,19 +92,20 @@ _main = function ($, wPageData) {
 
 
 	var _run = function (foo, name) {
-		console.groupCollapsed ('[贴吧助手]: ' + (name || '[未知区段]'));
+		// console.groupCollapsed ('[贴吧助手]: ' + (name || '[未知区段]'));
 
 		for (var args = [], i = 2, ret; i<arguments.length; i++)
 			args.push (arguments[i]);
 
 		try {
 			ret = foo.apply (this, args);
-			console.info ('Section returned: ', ret);
+			if (ret !== undefined)
+				console.info ('[贴吧助手][返回][%s]: %s', name || '[未知区段]', ret);
 		} catch (err) {
-			console.error ('Error at %s: %s', name || '[unknown]', err.message);
+			console.error ('[贴吧助手][错误][%s]: %s', name || '[未知区段]', err.message);
 			console.error (err);
 		}
-		console.groupEnd ();
+		// console.groupEnd ();
 
 		return ret;
 	};

@@ -9,7 +9,7 @@
 // @description:zh-cn 又一个贴吧助手
 // @description       又一个贴吧助手
 // @include     http://tieba.baidu.com/*
-// @version     2.2.67
+// @version     2.2.69
 // @license     MIT License; https://raw.githubusercontent.com/JixunMoe/yume-tieba-helper/master/LICENSE
 
 
@@ -131,19 +131,20 @@ _main = function ($, wPageData) {
 
 
 	var _run = function (foo, name) {
-		console.groupCollapsed ('[贴吧助手]: ' + (name || '[未知区段]'));
+		// console.groupCollapsed ('[贴吧助手]: ' + (name || '[未知区段]'));
 
 		for (var args = [], i = 2, ret; i<arguments.length; i++)
 			args.push (arguments[i]);
 
 		try {
 			ret = foo.apply (this, args);
-			console.info ('Section returned: ', ret);
+			if (ret !== undefined)
+				console.info ('[贴吧助手][返回][%s]: %s', name || '[未知区段]', ret);
 		} catch (err) {
-			console.error ('Error at %s: %s', name || '[unknown]', err.message);
+			console.error ('[贴吧助手][错误][%s]: %s', name || '[未知区段]', err.message);
 			console.error (err);
 		}
-		console.groupEnd ();
+		// console.groupEnd ();
 
 		return ret;
 	};
@@ -187,6 +188,10 @@ _main = function ($, wPageData) {
 		var $ads = [
 			// 贴吧推广
 			'.spreadad, .game_frs_step1, .BAIDU_CLB_AD, .dasense, .u9_head',
+			'.j_click_stats, .p_postlist>div:not(.l_post)',
+			'[id="pagelet_frs-header/pagelet/head_content_middle"]',
+			'[id="pagelet_encourage-appforum/pagelet/my_app"]',
+			'.life_helper',
 			
 			// 到处插入的广告
 			'[data-daid]',
@@ -255,7 +260,10 @@ _main = function ($, wPageData) {
 
 			'.tbui_fbar_share, .tbui_fbar_tsukkomi, .tbui_fbar_props, .tbui_fbar_square, .tbui_fbar_home',
 
-			'#tshow_out_date_warn, #selectsearch-icon'
+			'#tshow_out_date_warn, #selectsearch-icon',
+			
+			// 贴吧推荐
+			'#forum_recommend'
 		].join(', ');
 
 		$($ads).remove();
@@ -289,6 +297,26 @@ display:none !important;
 				}).remove();
 			}, 3000 * i);
 		}
+		
+		this.removePromoteThread();
+	},
+	
+	_proc: function (floorType, args) {
+		if (floorType == __type_forum) {
+			if (args.thread.find('.threadlist_rep_num').text() == '推广')
+				args.thread.remove();
+		}
+	},
+	
+	removePromoteThread: function () {
+		// 清理帖子列表的推广
+		var it = document.evaluate('//*[@id="thread_list"]/li/div/div/div[text()="推广"]', document.body);
+		var thread, threads = [];
+		
+		while (thread = it.iterateNext())
+			threads.push(thread);
+		
+		$(threads).parents('li').remove();
 	}
 }
 ,
