@@ -6,7 +6,7 @@
 		var $ads = [
 			// 贴吧推广
 			'.spreadad, .game_frs_step1, .BAIDU_CLB_AD, .dasense, .u9_head',
-			'.j_click_stats, .p_postlist>div:not(.l_post)',
+			'.j_click_stats, .p_postlist>div:not(.l_post):not(.p_postlist)',
 			'[id="pagelet_frs-header/pagelet/head_content_middle"]',
 			'[id="pagelet_encourage-appforum/pagelet/my_app"]',
 			'.life_helper',

@@ -9,7 +9,7 @@
 // @description:zh-cn 又一个贴吧助手
 // @description       又一个贴吧助手
 // @include     http://tieba.baidu.com/*
-// @version     2.2.69
+// @version     2.2.70
 // @license     MIT License; https://raw.githubusercontent.com/JixunMoe/yume-tieba-helper/master/LICENSE
 
 
@@ -188,7 +188,7 @@ _main = function ($, wPageData) {
 		var $ads = [
 			// 贴吧推广
 			'.spreadad, .game_frs_step1, .BAIDU_CLB_AD, .dasense, .u9_head',
-			'.j_click_stats, .p_postlist>div:not(.l_post)',
+			'.j_click_stats, .p_postlist>div:not(.l_post):not(.p_postlist)',
 			'[id="pagelet_frs-header/pagelet/head_content_middle"]',
 			'[id="pagelet_encourage-appforum/pagelet/my_app"]',
 			'.life_helper',
