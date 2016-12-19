@@ -230,15 +230,17 @@ _main = function ($, wPageData) {
 			}
 		});
 
-		var _m = $('.u_setting>.u_ddl');
-		if (_m.length) {
-			_callMenu (_m);
-		} else {
-			ma.observe($('.u_setting')[0], {
-				childList: true,
-				subtree: true
-			});
-		}
+		setTimeout(function () {
+			var _m = $('.u_setting>.u_ddl');
+			if (_m.length) {
+				_callMenu (_m);
+			} else {
+				ma.observe($('.u_setting')[0], {
+					childList: true,
+					subtree: true
+				});
+			}
+		}, 1500);
 	}, '捕捉设定');
 	// console.log ($('li.u_setting .u_tb_profile'));
 

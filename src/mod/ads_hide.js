@@ -114,7 +114,7 @@
 	
 	removePromoteThread: function () {
 		// 清理帖子列表的推广
-		var it = document.evaluate('//*[@id="thread_list"]/li/div/div/div[text()="推广"]', document.body);
+		var it = document.evaluate('//*[@id="thread_list"]/li/div/div/div[text()="推广"]', document.body, null, XPathResult.ANY_TYPE, null);
 		var thread, threads = [];
 		
 		while (thread = it.iterateNext())

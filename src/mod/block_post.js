@@ -149,7 +149,9 @@
 		}).on ('click', '.ui_btn', function () {
 			switch ($(this).data('btn')) {
 				case 'add':
-					var $tplAdd = $(that.$tplAddWord);
+					var $tplAdd = $(Mustache.render(that.$tplAddWord, {
+						tp_plain: true
+					}));
 					$('#jx_post_kword', $tpl).append ($tplAdd);
 					$tplAdd.find ('.tg_focus').removeClass ('.tg_focus').focus();
 					break;

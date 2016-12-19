@@ -9,7 +9,7 @@
 // @description:zh-cn 又一个贴吧助手
 // @description       又一个贴吧助手
 // @include     http://tieba.baidu.com/*
-// @version     2.2.70
+// @version     2.2.73
 // @license     MIT License; https://raw.githubusercontent.com/JixunMoe/yume-tieba-helper/master/LICENSE
 
 
@@ -310,7 +310,7 @@ display:none !important;
 	
 	removePromoteThread: function () {
 		// 清理帖子列表的推广
-		var it = document.evaluate('//*[@id="thread_list"]/li/div/div/div[text()="推广"]', document.body);
+		var it = document.evaluate('//*[@id="thread_list"]/li/div/div/div[text()="推广"]', document.body, null, XPathResult.ANY_TYPE, null);
 		var thread, threads = [];
 		
 		while (thread = it.iterateNext())
@@ -571,7 +571,9 @@ display:none !important;
 		}).on ('click', '.ui_btn', function () {
 			switch ($(this).data('btn')) {
 				case 'add':
-					var $tplAdd = $(that.$tplAddWord);
+					var $tplAdd = $(Mustache.render(that.$tplAddWord, {
+						tp_plain: true
+					}));
 					$('#jx_post_kword', $tpl).append ($tplAdd);
 					$tplAdd.find ('.tg_focus').removeClass ('.tg_focus').focus();
 					break;
@@ -1219,15 +1221,17 @@ display:none !important;
 			}
 		});
 
-		var _m = $('.u_setting>.u_ddl');
-		if (_m.length) {
-			_callMenu (_m);
-		} else {
-			ma.observe($('.u_setting')[0], {
-				childList: true,
-				subtree: true
-			});
-		}
+		setTimeout(function () {
+			var _m = $('.u_setting>.u_ddl');
+			if (_m.length) {
+				_callMenu (_m);
+			} else {
+				ma.observe($('.u_setting')[0], {
+					childList: true,
+					subtree: true
+				});
+			}
+		}, 1500);
 	}, '捕捉设定');
 	// console.log ($('li.u_setting .u_tb_profile'));
 
